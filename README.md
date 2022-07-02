@@ -7,7 +7,7 @@
 3. [Файловая структура](#файловая-структура)
 
 ## Файловая структура
-- :file_folder: src
+:file_folder: src
   - :page_facing_up: main.tsx
   - :page_facing_up: App.tsx
   - :file_folder: pages
