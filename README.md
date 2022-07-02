@@ -27,4 +27,4 @@
 - :page_facing_up: tsconfig.json - настройки TypeScript.
 - :page_facing_up: tsconfig.node.json - настройки TypeScript для node среды vite.
 - :page_facing_up: vite.config.ts - настройки vite.
-- ![myImage](https://img.icons8.com/color/96/000000/json--v1.png)
+- ![myImage](https://img.icons8.com/color/48/000000/json--v1.png)
