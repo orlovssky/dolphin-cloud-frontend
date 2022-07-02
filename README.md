@@ -7,6 +7,11 @@
 3. [Файловая структура](#файловая-структура)
 
 ## Файловая структура
+- :page_facing_up: <code>index.html</code> - точка входа. Здесь подключается модуль main.tsx.
+- :page_facing_up: <code>package.json</code> - информация о приложении: название, версия, зависимости, скрипты и т.п.
+- :page_facing_up: <code>tsconfig.json</code> - настройки TypeScript.
+- :page_facing_up: <code>tsconfig.node.json</code> - настройки TypeScript для node среды vite.
+- :page_facing_up: <code>vite.config.ts</code> - настройки vite.
 - :file_folder: <code>src</code>
   - :page_facing_up: <code>main.tsx</code> - основной файл c React подключениями и глобальными импортами.
   - :page_facing_up: <code>App.tsx</code> - стартовый файл приложения.
@@ -31,8 +36,3 @@
     - :file_folder: <code>main</code> - основные модели.
     - :file_folder: <code>common</code> - общие модели.
     - :file_folder: <code>*special</code> - уникальные модели блока.
-- :page_facing_up: <code>index.html</code> - точка входа. Здесь подключается модуль main.tsx.
-- :page_facing_up: <code>package.json</code> - информация о приложении: название, версия, зависимости, скрипты и т.п. 
-- :page_facing_up: <code>tsconfig.json</code> - настройки TypeScript. 
-- :page_facing_up: <code>tsconfig.node.json</code> - настройки TypeScript для node среды vite. 
-- :page_facing_up: <code>vite.config.ts</code> - настройки vite.
