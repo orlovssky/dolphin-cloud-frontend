@@ -8,7 +8,7 @@
 
 ## Файловая структура
 :file_folder: src<br/>
-    *:page_facing_up: main.tsx<br/>
+    >:page_facing_up: main.tsx<br/>
     :page_facing_up: App.tsx<br/>
     :file_folder: pages<br/>
     :file_folder: components<br/>
