@@ -22,7 +22,7 @@
   - :file_folder: contexts
   - :file_folder: hooks
   - :file_folder: models
-- :page_facing_up: index.html - точка входа. Здесь подключается модуль main.tsx.
+- :page_facing_up: <code>index.html</code> - точка входа. Здесь подключается модуль main.tsx.
 - :page_facing_up: package.json - информация о приложении: название, версия, зависимости, скрипты и т.п. 
 - :page_facing_up: tsconfig.json - настройки TypeScript. 
 - :page_facing_up: tsconfig.node.json - настройки TypeScript для node среды vite. 
