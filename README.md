@@ -7,23 +7,23 @@
 3. [Файловая структура](#файловая-структура)
 
 ## Файловая структура
-- :file_folder: src
-  - :page_facing_up: main.tsx
-  - :page_facing_up: App.tsx 
-  - :file_folder: pages
-  - :file_folder: components
-  - :file_folder: services
-    - :file_folder: api
-    - :file_folder: constants
-    - :file_folder: helpers
-  - :file_folder: assets
-  - :file_folder: styles
-  - :file_folder: plugins
-  - :file_folder: contexts
-  - :file_folder: hooks
-  - :file_folder: models
+- :file_folder: <code>src</code>
+  - :page_facing_up: <code>main.tsx</code>
+  - :page_facing_up: <code>App.tsx</code>
+  - :file_folder: <code>pages</code>
+  - :file_folder: <code>components</code>
+  - :file_folder: <code>services</code>
+    - :file_folder: <code>api</code>
+    - :file_folder: <code>constants</code>
+    - :file_folder: <code>helpers</code>
+  - :file_folder: <code>assets</code>
+  - :file_folder: <code>styles</code>
+  - :file_folder: <code>plugins</code>
+  - :file_folder: <code>contexts</code>
+  - :file_folder: <code>hooks</code>
+  - :file_folder: <code>models</code>
 - :page_facing_up: <code>index.html</code> - точка входа. Здесь подключается модуль main.tsx.
-- :page_facing_up: package.json - информация о приложении: название, версия, зависимости, скрипты и т.п. 
-- :page_facing_up: tsconfig.json - настройки TypeScript. 
-- :page_facing_up: tsconfig.node.json - настройки TypeScript для node среды vite. 
-- :page_facing_up: vite.config.ts - настройки vite.
+- :page_facing_up: <code>package.json</code> - информация о приложении: название, версия, зависимости, скрипты и т.п. 
+- :page_facing_up: <code>tsconfig.json</code> - настройки TypeScript. 
+- :page_facing_up: <code>tsconfig.node.json</code> - настройки TypeScript для node среды vite. 
+- :page_facing_up: <code>vite.config.ts</code> - настройки vite.
