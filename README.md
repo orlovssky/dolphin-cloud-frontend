@@ -18,7 +18,7 @@
   - :file_folder: <code>pages</code> - страницы для роутера.
   - :file_folder: <code>components</code>
     - :file_folder: <code>main</code> - основные компоненты.
-    - :file_folder: <code>common</code> - простые переиспользуемы компоненты.
+    - :file_folder: <code>common</code> - простые переиспользуемые компоненты.
     - :file_folder: <code>*special</code> - уникальная компоненты блока.
   - :file_folder: <code>services</code>
     - :file_folder: <code>api</code>
