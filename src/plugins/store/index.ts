@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import common from "./modules/common";
 import main from "./modules/main";
 
 const store = configureStore({
   reducer: {
     ...main,
-    ...common,
   },
 });
 

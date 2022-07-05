@@ -1,11 +1,10 @@
 import Error404 from "pages/main/Error404";
-import Home from "pages/main/Home";
 import { Route } from "react-router-dom";
 
-const MainRoutes = (
+export default (
   <Route path="/">
     {/* HOME */}
-    <Route index element={<Home />} />
+    <Route index element={<div>Main Index</div>} />
     {/* HOME END */}
 
     {/* 404 */}
@@ -13,5 +12,3 @@ const MainRoutes = (
     {/* 404 END */}
   </Route>
 );
-
-export default MainRoutes;
