@@ -2,7 +2,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import Fab from "@mui/material/Fab";
 import { useAppDispatch, useAppSelector } from "plugins/store/hooks";
-import { setSidebarOpened } from "plugins/store/modules/main/appData";
+import { setSidebarOpened } from "plugins/store/modules/main/appData.modules";
 
 export default function MainLayoutSidebarTouchScreenFab(): JSX.Element {
   const dispatch = useAppDispatch();

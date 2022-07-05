@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "plugins/store/hooks";
 import {
   setInnerHeight,
   setTouchScreen,
-} from "plugins/store/modules/main/appData";
+} from "plugins/store/modules/main/appData.modules";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { getLocale } from "services/constants/main/locales.constants";

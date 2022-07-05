@@ -1,4 +1,4 @@
-import appDataReducer from "./appData";
+import appDataReducer from "./appData.modules";
 
 export default {
   appData: appDataReducer,

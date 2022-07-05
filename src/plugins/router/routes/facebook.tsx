@@ -1,3 +1,4 @@
+import FacebookAdsManager from "pages/facebook/FacebookAdsManager";
 import Index from "pages/facebook/Facebook";
 import { Route } from "react-router-dom";
 
@@ -21,7 +22,7 @@ export default (
       path="ads-manager"
       element={
         <RequireAuth>
-          <div>ADSMANAGER</div>
+          <FacebookAdsManager />
         </RequireAuth>
       }
     />

@@ -1,0 +1,13 @@
+.table {
+  &__topbar {
+    &.MuiContainer-root {
+      padding: 6px 8px;
+      display: flex;
+      justify-content: end;
+
+      + .MuiPaper-root.MuiTableContainer-root {
+        box-shadow: none;
+      }
+    }
+  }
+}
