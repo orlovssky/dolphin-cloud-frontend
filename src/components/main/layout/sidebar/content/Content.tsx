@@ -1,4 +1,4 @@
-import { getCurrentPlatform } from "services/utils/common/route.utils";
+import { isAuthorized } from "services/utils/common/route.utils";
 
 import MainLayoutSidebarBottom from "./bottom/Bottom";
 import MainLayoutSidebarMiddle from "./middle/Middle";
@@ -12,7 +12,7 @@ export default function MainLayoutSidebarContent(): JSX.Element {
       {/*TOP END*/}
 
       {/*MIDDLE*/}
-      {getCurrentPlatform() && <MainLayoutSidebarMiddle />}
+      {isAuthorized() && <MainLayoutSidebarMiddle />}
       {/*MIDDLE END*/}
 
       {/*BOTTOM*/}

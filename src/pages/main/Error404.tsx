@@ -1,5 +1,5 @@
-const Error404 = (): JSX.Element => {
-  return <div>404</div>;
-};
+import Container from "@mui/material/Container";
 
-export default Error404;
+export default function Error404(): JSX.Element {
+  return <Container className="main__error" />;
+}

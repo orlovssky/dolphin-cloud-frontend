@@ -13,6 +13,8 @@ export default function MainLayoutSidebarTouchScreenFab(): JSX.Element {
   return (
     <Fab
       className="sidebar__fab"
+      color={sidebarOpened ? "error" : "primary"}
+      size="small"
       onClick={() => dispatch(setSidebarOpened(!sidebarOpened))}
     >
       {sidebarOpened ? <CloseIcon /> : <MenuIcon />}
