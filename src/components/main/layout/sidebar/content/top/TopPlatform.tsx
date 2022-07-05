@@ -9,19 +9,36 @@ import {
   platformsForSidebar,
   getDolphinPlatformIcon,
 } from "services/constants/main/platforms.constants";
-import { getCurrentPlatform } from "services/utils/common/route.utils";
+import {
+  getCurrentPlatform,
+  isAuthorized,
+} from "services/utils/common/route.utils";
 
 export default function MainLayoutSidebarTopPlatform(): JSX.Element {
   const navigate = useNavigate();
   const currentPlatform = getCurrentPlatform();
+  const isSelected = (value: string) => currentPlatform === value;
+  const isDisabled = (value: string) => !isAuthorized() || value === "google";
   const handleChange = (_: MouseEvent<HTMLElement>, value: string) => {
-    navigate(`/${value}`);
+    if (currentPlatform !== value) {
+      navigate(`/${value}`);
+    }
+  };
+  const handleClick = () => {
+    if (currentPlatform) {
+      navigate(`/${currentPlatform}`);
+    } else {
+      navigate("/");
+    }
   };
 
   return (
     <ListItem className="sidebar__item">
       {/*DOLPHIN PLATFORM ICON*/}
-      <ListItemIcon className="sidebar__item-icon">
+      <ListItemIcon
+        className="sidebar__item-icon sidebar__item-icon_clickable"
+        onClick={handleClick}
+      >
         {getDolphinPlatformIcon(currentPlatform)}
       </ListItemIcon>
       {/*DOLPHIN PLATFORM ICON*/}
@@ -41,8 +58,8 @@ export default function MainLayoutSidebarTopPlatform(): JSX.Element {
                 key={value}
                 value={value}
                 size="small"
-                selected={currentPlatform === value}
-                disabled={value === "google"}
+                selected={isSelected(value)}
+                disabled={isDisabled(value)}
                 className="sidebar__toggle-button"
               >
                 {icon}

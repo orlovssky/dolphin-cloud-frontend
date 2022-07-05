@@ -13,3 +13,10 @@ export const getCurrentPlatform = () => {
     return null;
   }
 };
+
+export const isAuthorized = () => {
+  const { pathname } = useLocation();
+  const notAuthRoutes = ["/sign-in"];
+
+  return notAuthRoutes.findIndex((route) => pathname.startsWith(route)) === -1;
+};
