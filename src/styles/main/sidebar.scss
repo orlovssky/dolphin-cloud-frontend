@@ -1,0 +1,93 @@
+.sidebar {
+  &__drawer {
+    &.sidebar_desktop {
+      width: 56px;
+
+      & .MuiDrawer-paper {
+        justify-content: space-between;
+        width: 56px;
+        transition: width .13s;
+        box-sizing: border-box;
+      }
+
+      &.sidebar_opened {
+        & .MuiDrawer-paper {
+          width: 260px;
+        }
+      }
+    }
+
+    &.sidebar_touchscreen {
+      width: 100vw;
+
+      & .MuiDrawer-paper {
+        width: 100vw;
+      }
+    }
+  }
+
+  &__fab {
+    &.MuiFab-root {
+      position: fixed;
+      right: 5%;
+      bottom: 5%;
+      z-index: 1201;
+    }
+  }
+
+  &__list {
+    &-bottom {
+      & .MuiListItem-root {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__item {
+    &.MuiListItem-root {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &-text {
+      padding-right: 1em;
+
+      &.MuiListItemText-root {
+        visibility: hidden;
+        width: 0;
+        opacity: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        white-space: nowrap;
+        transition: width .13s, opacity .13s;
+      }
+    }
+
+    &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &_opened {
+    & .sidebar__item-text {
+      &.MuiListItemText-root {
+        visibility: visible;
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__toggle {
+    &-group.MuiToggleButtonGroup-root {
+      vertical-align: middle;
+    }
+
+    &-button.MuiButtonBase-root {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+  }
+}

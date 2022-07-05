@@ -1,4 +1,5 @@
-import "styles/main/main.scss";
+import "plugins/i18next";
+import "styles/styles.scss";
 import App from "App";
 import store from "plugins/store";
 import ReactDOM from "react-dom/client";

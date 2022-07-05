@@ -1,8 +1,8 @@
-import Index from "pages/tikTok/TikTok";
+import Index from "pages/facebook/Facebook";
 import { Route } from "react-router-dom";
 
 export default (
-  <Route path="/tik-tok">
+  <Route path="/facebook">
     {/* INDEX */}
     <Route index element={<Index />} />
     {/* INDEX END */}
