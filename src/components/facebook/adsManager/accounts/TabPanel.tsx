@@ -9,7 +9,7 @@ import {
 export default function FacebookAdsManagerAccountsTabPanel(): JSX.Element {
   return (
     <>
-      <CommonTableTopbar />
+      <CommonTableTopbar<TableItemModel> url={url} />
       <CommonTable<TableItemModel> url={url} rows={rows} />
     </>
   );

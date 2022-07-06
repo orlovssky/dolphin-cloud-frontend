@@ -1,10 +1,14 @@
 import Container from "@mui/material/Container";
-import TextField from "@mui/material/TextField";
+import { TopbarProps } from "models/common/table.models";
 
-export default function CommonTableTopbar(): JSX.Element {
+import CommonTableTopbarSearch from "./TopbarSearch";
+
+export default function CommonTableTopbar<Item>({
+  url,
+}: TopbarProps): JSX.Element {
   return (
     <Container className="table__topbar">
-      <TextField size="small" />
+      <CommonTableTopbarSearch<Item> url={url} />
     </Container>
   );
 }

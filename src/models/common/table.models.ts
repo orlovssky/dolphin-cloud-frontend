@@ -1,11 +1,12 @@
 import { Key } from "react";
 
-export interface TableStateModel {
+export interface TableStateModel extends PaginationModel {
   items: any[];
   loading: boolean;
+  search: string;
 }
 
-export interface PropsModel<Item> {
+export interface TablePropsModel<Item> {
   url: string;
   rows: RowModel<Item>[];
 }
@@ -24,5 +25,33 @@ export interface ItemModel {
 export interface ResponseModel<Item> {
   data: {
     data: Item[];
+    meta: PaginationResponseModel;
   };
+}
+
+export interface LoadItemsModels {
+  rowsPerPage?: number;
+  page?: number;
+}
+
+export interface PaginationModel {
+  rowsPerPage: number;
+  page: number;
+  total: number;
+}
+
+export interface PaginationResponseModel {
+  per_page: number;
+  current_page: number;
+  total: number;
+}
+
+export interface PaginationPropsModel extends PaginationModel {
+  loadItems: (payload?: LoadItemsModels) => void;
+}
+
+export type TopbarProps = TopbarSearchProps;
+
+export interface TopbarSearchProps {
+  url: string;
 }

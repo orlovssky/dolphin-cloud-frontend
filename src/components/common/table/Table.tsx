@@ -6,38 +6,24 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Table from "@mui/material/Table";
-import { PropsModel } from "models/common/table.models";
-import { useAppSelector, useAppDispatch } from "plugins/store/hooks";
-import {
-  setItems,
-  setLoading,
-} from "plugins/store/modules/common/table.modules";
-import { useTranslation } from "react-i18next";
+import { TablePropsModel } from "models/common/table.models";
+import { useAppDispatch } from "plugins/store/hooks";
+import { setItems } from "plugins/store/modules/common/table.modules";
 import { useEffect } from "react";
-import { getListApi } from "services/api/common/list.api";
+
+import { useTableControls } from "./TableControl";
+import CommonTablePagination from "./TablePagination";
 
 export default function CommonTable<Item>({
   url,
   rows,
-}: PropsModel<Item>): JSX.Element {
+}: TablePropsModel<Item>): JSX.Element {
   const dispatch = useAppDispatch();
-  const { t } = useTranslation();
-  const { innerHeight } = useAppSelector((state) => state.appData);
-  const { items, loading } = useAppSelector((state) => state.table);
-  const height = innerHeight - 48 - 52;
+  const { t, items, loading, height, rowsPerPage, page, total, loadItems } =
+    useTableControls<Item>(url);
 
   useEffect(() => {
-    dispatch(setLoading(true));
-
-    getListApi<Item>(url)
-      .then(({ data }) => {
-        if (Array.isArray(data.data)) {
-          dispatch(setItems(data.data));
-        }
-      })
-      .finally(() => {
-        dispatch(setLoading(false));
-      });
+    loadItems();
 
     return () => {
       dispatch(setItems([]));
@@ -45,36 +31,47 @@ export default function CommonTable<Item>({
   }, []);
 
   return (
-    <TableContainer component={Paper} sx={{ height }}>
-      {/*LOADER*/}
-      {loading && <LinearProgress />}
-      {/*LOADER END*/}
+    <>
+      <TableContainer component={Paper} sx={{ height }}>
+        {/*LOADER*/}
+        {loading && <LinearProgress />}
+        {/*LOADER END*/}
 
-      <Table stickyHeader size="small">
-        {/*TABLE HEAD*/}
-        <TableHead>
-          <TableRow>
-            {rows.map(({ title, indexKey }) => (
-              <TableCell key={indexKey}>{t(`${title}`)}</TableCell>
-            ))}
-          </TableRow>
-        </TableHead>
-        {/*TABLE HEAD END*/}
-
-        {/*TABLE BODY*/}
-        <TableBody>
-          {items.map((item) => (
-            <TableRow key={item.id}>
-              {rows.map(({ itemKey, indexKey }) => (
-                <TableCell key={`${item.id}-${indexKey}`}>
-                  {item[itemKey]}
-                </TableCell>
+        <Table stickyHeader size="small">
+          {/*TABLE HEAD*/}
+          <TableHead>
+            <TableRow>
+              {rows.map(({ title, indexKey }) => (
+                <TableCell key={indexKey}>{t(`${title}`)}</TableCell>
               ))}
             </TableRow>
-          ))}
-        </TableBody>
-        {/*TABLE BODY END*/}
-      </Table>
-    </TableContainer>
+          </TableHead>
+          {/*TABLE HEAD END*/}
+
+          {/*TABLE BODY*/}
+          <TableBody>
+            {items.map((item) => (
+              <TableRow key={item.id}>
+                {rows.map(({ itemKey, indexKey }) => (
+                  <TableCell key={`${item.id}-${indexKey}`}>
+                    {item[itemKey]}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+          {/*TABLE BODY END*/}
+        </Table>
+      </TableContainer>
+
+      {/*PAGINATION*/}
+      <CommonTablePagination
+        rowsPerPage={rowsPerPage}
+        page={page}
+        total={total}
+        loadItems={loadItems}
+      />
+      {/*PAGINATION END*/}
+    </>
   );
 }

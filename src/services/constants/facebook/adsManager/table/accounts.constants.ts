@@ -19,4 +19,4 @@ export const rows: RowModel<TableItemModel>[] = [
   },
 ];
 
-export const url = "/fb-accounts?perPage=50&page=1&currency=USD";
+export const url = "/fb-accounts?currency=USD";
