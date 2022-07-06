@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TableStateModel, ItemModel } from "models/common/table.models";
+import { TableStateModel } from "models/common/table.models";
 
 const initialState: TableStateModel = {
   items: [],
@@ -12,7 +12,7 @@ export const tableSlice = createSlice({
   initialState,
 
   reducers: {
-    setItems: (state, action: PayloadAction<ItemModel[]>) => {
+    setItems: (state, action) => {
       state.items = action.payload;
     },
 

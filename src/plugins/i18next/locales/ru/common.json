@@ -29,10 +29,12 @@
 		"adsManager": "Ads manager",
 		"apps": "Приложения",
 		"balance": "Баланс",
+		"currency": "Валюта",
 		"dark": "Темная",
 		"id": "ID",
 		"light": "Светлая",
 		"name": "Название",
+		"status": "Статус",
 		"success": "Успешно",
 		"unsuccess": "Неудачно"
 	},

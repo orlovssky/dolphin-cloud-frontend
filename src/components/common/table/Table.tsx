@@ -16,10 +16,10 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { getListApi } from "services/api/common/list.api";
 
-export default function CommonTable<Row>({
+export default function CommonTable<Item>({
   url,
   rows,
-}: PropsModel<Row>): JSX.Element {
+}: PropsModel<Item>): JSX.Element {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const { innerHeight } = useAppSelector((state) => state.appData);
@@ -29,7 +29,7 @@ export default function CommonTable<Row>({
   useEffect(() => {
     dispatch(setLoading(true));
 
-    getListApi(url)
+    getListApi<Item>(url)
       .then(({ data }) => {
         if (Array.isArray(data.data)) {
           dispatch(setItems(data.data));
@@ -46,26 +46,34 @@ export default function CommonTable<Row>({
 
   return (
     <TableContainer component={Paper} sx={{ height }}>
+      {/*LOADER*/}
       {loading && <LinearProgress />}
+      {/*LOADER END*/}
 
       <Table stickyHeader size="small">
+        {/*TABLE HEAD*/}
         <TableHead>
           <TableRow>
-            {rows.map(({ value, title }) => (
-              <TableCell key={value}>{t(`${title}`)}</TableCell>
+            {rows.map(({ title, indexKey }) => (
+              <TableCell key={indexKey}>{t(`${title}`)}</TableCell>
             ))}
           </TableRow>
         </TableHead>
+        {/*TABLE HEAD END*/}
 
+        {/*TABLE BODY*/}
         <TableBody>
           {items.map((item) => (
             <TableRow key={item.id}>
-              {rows.map(({ value }) => (
-                <TableCell key={`${item.id}-${value}`}>{item[value]}</TableCell>
+              {rows.map(({ itemKey, indexKey }) => (
+                <TableCell key={`${item.id}-${indexKey}`}>
+                  {item[itemKey]}
+                </TableCell>
               ))}
             </TableRow>
           ))}
         </TableBody>
+        {/*TABLE BODY END*/}
       </Table>
     </TableContainer>
   );

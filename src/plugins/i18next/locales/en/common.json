@@ -29,10 +29,12 @@
 		"adsManager": "Ads manager",
 		"apps": "Apps",
 		"balance": "Balance",
+		"currency": "Currency",
 		"dark": "Dark",
 		"id": "ID",
 		"light": "Light",
 		"name": "Name",
+		"status": "Status",
 		"success": "Success",
 		"unsuccess": "Unsuccess"
 	},

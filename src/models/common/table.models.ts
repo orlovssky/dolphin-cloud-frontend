@@ -1,15 +1,18 @@
+import { Key } from "react";
+
 export interface TableStateModel {
-  items: ItemModel[];
+  items: any[];
   loading: boolean;
 }
 
-export interface PropsModel<Row> {
+export interface PropsModel<Item> {
   url: string;
-  rows: Row[];
+  rows: RowModel<Item>[];
 }
 
 export interface RowModel<Item> {
-  value: keyof Item;
+  indexKey: Key;
+  itemKey: keyof Item;
   title: string;
 }
 
@@ -18,8 +21,8 @@ export interface ItemModel {
   name: string;
 }
 
-export interface ResponseModel {
+export interface ResponseModel<Item> {
   data: {
-    data: ItemModel[];
+    data: Item[];
   };
 }
