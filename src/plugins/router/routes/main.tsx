@@ -1,6 +1,6 @@
 import Error404 from "pages/main/Error404";
 import SignIn from "pages/main/SignIn";
-import { Route } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 
 import { RequireAuth, RequireUnauth } from "../middlewares";
 
@@ -11,7 +11,7 @@ export default (
       index
       element={
         <RequireAuth>
-          <div>Main Index</div>
+          <Navigate to="facebook" />
         </RequireAuth>
       }
     />

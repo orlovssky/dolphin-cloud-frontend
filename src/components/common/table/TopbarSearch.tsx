@@ -37,13 +37,11 @@ export default function CommonTableTopbarSearch<Item>({
   }, []);
 
   return (
-    <Container className="table__topbar">
-      <TextField
-        size="small"
-        label={t("common.search")}
-        value={search}
-        onChange={handleChange}
-      />
-    </Container>
+    <TextField
+      size="small"
+      label={t("common.search")}
+      value={search}
+      onChange={handleChange}
+    />
   );
 }

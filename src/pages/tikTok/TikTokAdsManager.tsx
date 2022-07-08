@@ -3,9 +3,9 @@ import Tab from "@mui/material/Tab";
 import { useTranslation } from "react-i18next";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, SyntheticEvent, useEffect } from "react";
-import { tabs } from "services/constants/facebook/adsManager/tabs.constants";
+import { tabs } from "services/constants/tikTok/adsManager/tabs.constants";
 
-export default function FacebookAdsManager(): JSX.Element {
+export default function TikTokAdsManager(): JSX.Element {
   const navigate = useNavigate();
   const { tab: routeTab } = useParams();
   const { t } = useTranslation();
@@ -16,7 +16,7 @@ export default function FacebookAdsManager(): JSX.Element {
   };
 
   useEffect(() => {
-    let initialTab = 1;
+    let initialTab = 0;
 
     if (routeTab) {
       const tabIndex = tabs.findIndex((i) => i.tabName === routeTab);
@@ -34,7 +34,7 @@ export default function FacebookAdsManager(): JSX.Element {
         <Tabs value={tab} variant="fullWidth" onChange={handleChange}>
           {tabs.map(({ title }, index) => (
             <Tab
-              key={`FacebookAdsManager-Tab-${index}`}
+              key={`TikTokAdsManager-Tab-${index}`}
               label={t(`adsmanager.${title}`)}
             />
           ))}

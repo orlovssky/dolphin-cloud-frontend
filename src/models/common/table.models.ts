@@ -8,6 +8,7 @@ export interface TableStateModel extends PaginationModel {
 
 export interface TablePropsModel<Item> {
   url: string;
+  heightOffset?: number;
   rows: RowModel<Item>[];
 }
 

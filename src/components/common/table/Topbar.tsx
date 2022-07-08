@@ -7,7 +7,7 @@ export default function CommonTableTopbar<Item>({
   url,
 }: TopbarProps): JSX.Element {
   return (
-    <Container className="table__topbar">
+    <Container maxWidth={false} className="table__topbar">
       <CommonTableTopbarSearch<Item> url={url} />
     </Container>
   );

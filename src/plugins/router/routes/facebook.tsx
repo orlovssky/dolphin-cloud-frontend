@@ -1,3 +1,4 @@
+import CommonProxy from "pages/common/CommonProxy";
 import FacebookAdsManager from "pages/facebook/FacebookAdsManager";
 import Index from "pages/facebook/Facebook";
 import { Route } from "react-router-dom";
@@ -25,7 +26,27 @@ export default (
           <FacebookAdsManager />
         </RequireAuth>
       }
-    />
+    >
+      <Route
+        path=":tab"
+        element={
+          <RequireAuth>
+            <FacebookAdsManager />
+          </RequireAuth>
+        }
+      />
+    </Route>
     {/*ADSMANAGER END*/}
+
+    {/*PROXY*/}
+    <Route
+      path="proxy"
+      element={
+        <RequireAuth>
+          <CommonProxy />
+        </RequireAuth>
+      }
+    />
+    {/*PROXY END*/}
   </Route>
 );

@@ -2,6 +2,7 @@ import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import { getCurrentPlatform } from "services/utils/common/route.utils";
 
+import MainLayoutSidebarMiddleCommon from "./MiddleCommon";
 import MainLayoutSidebarMiddleFacebook from "./MiddleFacebook";
 import MainLayoutSidebarMiddleSignOut from "./MiddleSignOut";
 import MainLayoutSidebarMiddleTikTok from "./MiddleTikTok";
@@ -20,6 +21,9 @@ export default function MainLayoutSidebarMiddle(): JSX.Element {
       {/*TIK TOK END*/}
 
       {currentPlatform && <Divider />}
+
+      <MainLayoutSidebarMiddleCommon />
+      <Divider />
 
       {/* SIGN OUT */}
       <MainLayoutSidebarMiddleSignOut />

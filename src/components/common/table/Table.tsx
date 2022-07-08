@@ -16,11 +16,12 @@ import CommonTablePagination from "./TablePagination";
 
 export default function CommonTable<Item>({
   url,
+  heightOffset = 48 + 52 + 52,
   rows,
 }: TablePropsModel<Item>): JSX.Element {
   const dispatch = useAppDispatch();
   const { t, items, loading, height, rowsPerPage, page, total, loadItems } =
-    useTableControls<Item>(url);
+    useTableControls<Item>(url, heightOffset);
 
   useEffect(() => {
     loadItems();
