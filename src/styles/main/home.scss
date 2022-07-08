@@ -1,0 +1,33 @@
+.tik-tok,
+.facebook {
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    text-align: center;
+    &.MuiTypography-root {
+      font-weight: 600;
+    }
+    &_fb {
+      color: #0062E0;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: 390px;
+    border: none;
+    border-radius: 25px;
+  }
+
+  &__o {
+    text-shadow: -2px 0px 0px #00f7eb, 2px 0px 0px #ee1c51;
+  }
+
+  &__list-icon {
+    &.MuiListItemIcon-root {
+      min-width: 28px;
+    }
+  }
+}

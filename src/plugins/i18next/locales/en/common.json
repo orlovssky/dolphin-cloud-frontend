@@ -14,6 +14,9 @@
 		},
 		"campaigns": {
 			"campaigns": "Campaigns"
+		},
+		"users": {
+			"users": "Users"
 		}
 	},
 	"apps": {
@@ -29,10 +32,15 @@
 		"adsManager": "Ads manager",
 		"apps": "Apps",
 		"balance": "Balance",
+		"browserExtension": "Browser extension",
+		"currency": "Currency",
 		"dark": "Dark",
 		"id": "ID",
 		"light": "Light",
 		"name": "Name",
+		"platform": "Platform",
+		"search": "Search",
+		"status": "Status",
 		"success": "Success",
 		"unsuccess": "Unsuccess"
 	},
@@ -40,6 +48,26 @@
 		"bundles": "Bundles",
 		"createAds": "Create ads",
 		"uploadJobs": "Upload jobs"
+	},
+	"facebook": {
+		"autoCampaignCreation": "Automation of advertising campaign creation",
+		"autoCampaignCreationSub": "Dolphin — provides a facility to create dozens of campaigns in different ad accounts. See how it works",
+		"title1": "Manage ads for all",
+		"title2": "accounts in one window"
+	},
+	"proxy": {
+		"host": "Host",
+		"login": "Login",
+		"password": "Password",
+		"port": "Port",
+		"proxy": "Proxy",
+		"type": "Type"
+	},
+	"tikTok": {
+		"autoCampaignCreation": "Automation of advertising campaign creation",
+		"autoCampaignCreationSub": "Dolphin — provides a facility to create dozens of campaigns in different ad accounts. See how it works",
+		"title1": "Manage ads for all",
+		"title2": "accounts in one window"
 	},
 	"validation": {
 		"alpha": "The {{field}} field may only contain alphabetic characters",

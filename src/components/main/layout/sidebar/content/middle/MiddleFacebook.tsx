@@ -1,5 +1,5 @@
-import BalconyIcon from "@mui/icons-material/Balcony";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
+import PowerOutlinedIcon from "@mui/icons-material/PowerOutlined";
 
 import MainLayoutSidebarContentItem from "../ContentItem";
 
@@ -13,9 +13,9 @@ export default function MainLayoutSidebarMiddleFacebook(): JSX.Element {
       />
 
       <MainLayoutSidebarContentItem
-        title="common.balance"
-        path="/facebook/balance"
-        icon={<BalconyIcon />}
+        title="proxy.proxy"
+        path="/facebook/proxy"
+        icon={<PowerOutlinedIcon />}
       />
     </>
   );

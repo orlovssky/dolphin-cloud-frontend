@@ -1,7 +1,6 @@
 import Drawer from "@mui/material/Drawer";
 import { useAppDispatch, useAppSelector } from "plugins/store/hooks";
-
-import { setSidebarOpened } from "../../../../plugins/store/modules/main/appData";
+import { setSidebarOpened } from "plugins/store/modules/main/appData.modules";
 
 import MainLayoutSidebarTouchScreenFab from "./SidebarTouchScreenFab";
 import MainSidebarContent from "./content/Content";

@@ -1,0 +1,16 @@
+import CommonTable from "components/common/table/Table";
+import CommonTableTopbar from "components/common/table/Topbar";
+import { TableItemModel } from "models/tikTok/campaigns.models";
+import {
+  rows,
+  url,
+} from "services/constants/tikTok/adsManager/table/campaigns.constants";
+
+export default function TikTokAdsManagerCampaignsTabPanel(): JSX.Element {
+  return (
+    <>
+      <CommonTableTopbar<TableItemModel> url={url} />
+      <CommonTable<TableItemModel> url={url} rows={rows} />
+    </>
+  );
+}

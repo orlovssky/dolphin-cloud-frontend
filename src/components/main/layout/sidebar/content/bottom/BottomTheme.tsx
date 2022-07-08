@@ -5,7 +5,7 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import ToggleButton from "@mui/material/ToggleButton";
 import { PaletteMode } from "@mui/material";
 import { useAppSelector, useAppDispatch } from "plugins/store/hooks";
-import { setTheme } from "plugins/store/modules/main/appData";
+import { setTheme } from "plugins/store/modules/main/appData.modules";
 import { useTranslation } from "react-i18next";
 import { MouseEvent } from "react";
 import { themes, getThemeIcon } from "services/constants/main/themes.constants";

@@ -1,3 +1,6 @@
+import CommonProxy from "pages/common/CommonProxy";
+import TikTokAdsManager from "pages/tikTok/TikTokAdsManager";
+import TikTokApps from "pages/tikTok/TikTokApps";
 import Index from "pages/tikTok/TikTok";
 import { Route } from "react-router-dom";
 
@@ -21,10 +24,41 @@ export default (
       path="ads-manager"
       element={
         <RequireAuth>
-          <div>ADSMANAGER</div>
+          <TikTokAdsManager />
+        </RequireAuth>
+      }
+    >
+      <Route
+        path=":tab"
+        element={
+          <RequireAuth>
+            <TikTokAdsManager />
+          </RequireAuth>
+        }
+      />
+    </Route>
+    {/*ADSMANAGER END*/}
+
+    {/*APPS*/}
+    <Route
+      path="apps"
+      element={
+        <RequireAuth>
+          <TikTokApps />
         </RequireAuth>
       }
     />
-    {/*ADSMANAGER END*/}
+    {/*APPS END*/}
+
+    {/*PROXY*/}
+    <Route
+      path="proxy"
+      element={
+        <RequireAuth>
+          <CommonProxy />
+        </RequireAuth>
+      }
+    />
+    {/*PROXY END*/}
   </Route>
 );
