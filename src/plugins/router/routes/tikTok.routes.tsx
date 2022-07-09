@@ -1,7 +1,7 @@
-import CommonProxy from "pages/common/CommonProxy";
-import TikTokAdsManager from "pages/tikTok/TikTokAdsManager";
-import TikTokApps from "pages/tikTok/TikTokApps";
-import Index from "pages/tikTok/TikTok";
+import CommonProxy from "pages/common/Proxy";
+import TikTokAdsManager from "pages/tikTok/AdsManager";
+import TikTokApps from "pages/tikTok/Apps";
+import TikTok from "pages/tikTok/TikTok";
 import { Route } from "react-router-dom";
 
 import { RequireAuth } from "../middlewares";
@@ -13,7 +13,7 @@ export default (
       index
       element={
         <RequireAuth>
-          <Index />
+          <TikTok />
         </RequireAuth>
       }
     />

@@ -1,13 +1,11 @@
-import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
+import { useTableControls } from "components/common/table/Control";
 import { TopbarSearchProps } from "models/common/table.models";
 import { useAppDispatch, useAppSelector } from "plugins/store/hooks";
 import { setSearch } from "plugins/store/modules/common/table.modules";
 import { ChangeEvent, useEffect, useRef } from "react";
 
-import { useTableControls } from "./TableControl";
-
-export default function CommonTableTopbarSearch<Item>({
+export default function CommonTopbarSearch<Item>({
   url,
 }: TopbarSearchProps): JSX.Element {
   const dispatch = useAppDispatch();

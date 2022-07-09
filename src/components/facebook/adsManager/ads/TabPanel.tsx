@@ -1,5 +1,5 @@
 import CommonTable from "components/common/table/Table";
-import CommonTableTopbar from "components/common/table/Topbar";
+import CommonTopbar from "components/common/topbar/Topbar";
 import { TableItemModel } from "models/facebook/ads.models";
 import {
   rows,
@@ -9,7 +9,7 @@ import {
 export default function FacebookAdsManagerAdsTabPanel(): JSX.Element {
   return (
     <>
-      <CommonTableTopbar<TableItemModel> url={url} />
+      <CommonTopbar<TableItemModel> url={url} />
       <CommonTable<TableItemModel> url={url} rows={rows} />
     </>
   );

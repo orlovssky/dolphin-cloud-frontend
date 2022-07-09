@@ -1,11 +1,10 @@
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
-import ExtensionOutlinedIcon from "@mui/icons-material/ExtensionOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
-import AntyIcon from "assets/icons/main/anty";
+import AntyIcon from "assets/icons/main/anty.icons";
 import { useTranslation } from "react-i18next";
 
 export default function MainLayoutSidebarMiddleCommon(): JSX.Element {
