@@ -21,13 +21,13 @@
   - :file_folder: <code>pages</code> - страницы для роутера.
   - :file_folder: <code>components</code>
     - :file_folder: <code>main</code> - основные компоненты.
-    - :file_folder: <code>common</code> - простые переиспользуемые компоненты.
+    - :file_folder: <code>common</code> - простые, переиспользуемые компоненты.
     - :file_folder: <code>**special*</code> - уникальная компоненты блока.
   - :file_folder: <code>services</code>
     - :file_folder: <code>api</code> - запросы к АПИ.
     - :file_folder: <code>constants</code> - константы.
-    - :file_folder: <code>helpers</code> - большие, логические сниппеты, могут использовать utils.
-    - :file_folder: <code>utils</code> - небольшие сниппеты, не могут использовать helpers.
+    - :file_folder: <code>helpers</code> - большие, логические, переиспользуемые сниппеты, могут использовать utils.
+    - :file_folder: <code>utils</code> - небольшие, переиспользуемые сниппеты, не могут использовать helpers.
   - :file_folder: <code>assets</code> - статичные ресурсы.
   - :file_folder: <code>styles</code>
     - :file_folder: <code>main</code> - основные стили.
