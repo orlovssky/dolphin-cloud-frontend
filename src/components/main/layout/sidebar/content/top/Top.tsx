@@ -1,6 +1,6 @@
 import List from "@mui/material/List";
 
-import MainLayoutSidebarTopPlatform from "./TopPlatform";
+import MainLayoutSidebarTopPlatform from "./Platform";
 
 export default function MainLayoutSidebarTop(): JSX.Element {
   return (

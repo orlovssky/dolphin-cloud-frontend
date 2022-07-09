@@ -2,10 +2,10 @@ import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import { getCurrentPlatform } from "services/utils/common/route.utils";
 
-import MainLayoutSidebarMiddleCommon from "./MiddleCommon";
-import MainLayoutSidebarMiddleFacebook from "./MiddleFacebook";
-import MainLayoutSidebarMiddleSignOut from "./MiddleSignOut";
-import MainLayoutSidebarMiddleTikTok from "./MiddleTikTok";
+import MainLayoutSidebarMiddleCommon from "./Common";
+import MainLayoutSidebarMiddleFacebook from "./Facebook";
+import MainLayoutSidebarMiddleSignOut from "./SignOut";
+import MainLayoutSidebarMiddleTikTok from "./TikTok";
 
 export default function MainLayoutSidebarMiddle(): JSX.Element {
   const currentPlatform = getCurrentPlatform();

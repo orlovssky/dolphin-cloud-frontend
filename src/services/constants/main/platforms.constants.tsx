@@ -1,9 +1,9 @@
 import GoogleIcon from "@mui/icons-material/Google";
-import DolphinFacebookIcon from "assets/icons/main/dolphin-facebook";
-import DolphinTikTokIcon from "assets/icons/main/dolphin-tik-tok";
-import DolphinDarkIcon from "assets/icons/main/dolphinDark";
-import FacebookIcon from "assets/icons/main/facebook";
-import TikTokIcon from "assets/icons/main/tik-tok";
+import DolphinFacebookIcon from "assets/icons/main/dolphin-facebook.icons";
+import DolphinTikTokIcon from "assets/icons/main/dolphin-tik-tok.icons";
+import DolphinDarkIcon from "assets/icons/main/dolphinDark.icons";
+import FacebookIcon from "assets/icons/main/facebook.icons";
+import TikTokIcon from "assets/icons/main/tik-tok.icons";
 import { CurrentPlatformModel } from "models/main/main.models";
 
 export const platformsForSidebar = [

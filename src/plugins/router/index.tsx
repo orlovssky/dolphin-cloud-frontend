@@ -1,8 +1,8 @@
 import { Routes } from "react-router-dom";
 
-import FacebookRoutes from "./routes/facebook";
-import MainRoutes from "./routes/main";
-import TikTokRoutes from "./routes/tikTok";
+import FacebookRoutes from "./routes/facebook.routes";
+import MainRoutes from "./routes/main.routes";
+import TikTokRoutes from "./routes/tikTok.routes";
 
 const AppRoutes = (): JSX.Element => {
   return (

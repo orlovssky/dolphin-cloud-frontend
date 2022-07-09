@@ -1,7 +1,7 @@
 import List from "@mui/material/List";
 
-import MainLayoutSidebarBottomLocale from "./BottomLocale";
-import MainLayoutSidebarBottomTheme from "./BottomTheme";
+import MainLayoutSidebarBottomLocale from "./Locale";
+import MainLayoutSidebarBottomTheme from "./Theme";
 
 export default function MainLayoutSidebarMiddle(): JSX.Element {
   return (

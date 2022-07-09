@@ -11,8 +11,8 @@ import { useAppDispatch } from "plugins/store/hooks";
 import { setItems } from "plugins/store/modules/common/table.modules";
 import { useEffect } from "react";
 
-import { useTableControls } from "./TableControl";
-import CommonTablePagination from "./TablePagination";
+import { useTableControls } from "./Control";
+import CommonTablePagination from "./Pagination";
 
 export default function CommonTable<Item>({
   url,

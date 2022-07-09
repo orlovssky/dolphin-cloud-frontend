@@ -28,6 +28,13 @@
     "prettier/prettier": ["error"],
     "arca/import-ordering": 2,
     "arca/newline-after-import-section": 2,
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "max-lines": [
+      "error",
+      {
+        "max": 100,
+        "skipBlankLines": true
+      }
+    ]
   }
 }

@@ -1,6 +1,6 @@
-import CommonProxy from "pages/common/CommonProxy";
-import FacebookAdsManager from "pages/facebook/FacebookAdsManager";
-import Index from "pages/facebook/Facebook";
+import CommonProxy from "pages/common/Proxy";
+import FacebookAdsManager from "pages/facebook/AdsManager";
+import Facebook from "pages/facebook/Facebook";
 import { Route } from "react-router-dom";
 
 import { RequireAuth } from "../middlewares";
@@ -12,7 +12,7 @@ export default (
       index
       element={
         <RequireAuth>
-          <Index />
+          <Facebook />
         </RequireAuth>
       }
     />

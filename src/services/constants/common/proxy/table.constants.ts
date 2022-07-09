@@ -1,5 +1,6 @@
 import { TableItemModel } from "models/common/proxy.models";
 import { RowModel } from "models/common/table.models";
+import { proxyEndpoints } from "plugins/axios/endpoints";
 
 export const rows: RowModel<TableItemModel>[] = [
   {
@@ -39,4 +40,4 @@ export const rows: RowModel<TableItemModel>[] = [
   },
 ];
 
-export const url = "/proxies?";
+export const url = `${proxyEndpoints.proxies}?`;

@@ -1,10 +1,10 @@
 import { enUS, ruRU, zhCN, Localization } from "@mui/material/locale";
-import CircleCnIcon from "assets/icons/flags/circleCn";
-import CircleGbIcon from "assets/icons/flags/circleGb";
-import CircleRuIcon from "assets/icons/flags/circleRu";
-import RectCnIcon from "assets/icons/flags/rectCn";
-import RectGbIcon from "assets/icons/flags/rectGb";
-import RectRuIcon from "assets/icons/flags/rectRu";
+import CircleCnIcon from "assets/icons/flags/circleCn.icons";
+import CircleGbIcon from "assets/icons/flags/circleGb.icons";
+import CircleRuIcon from "assets/icons/flags/circleRu.icons";
+import RectCnIcon from "assets/icons/flags/rectCn.icons";
+import RectGbIcon from "assets/icons/flags/rectGb.icons";
+import RectRuIcon from "assets/icons/flags/rectRu.icons";
 
 export const localesForSidebar = [
   {

@@ -7,7 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
-import DolphinSimple from "assets/icons/main/dolphinSimple";
+import DolphinSimpleIcon from "assets/icons/main/dolphinSimple.icons";
 import { useTranslation } from "react-i18next";
 
 const cards = [
@@ -87,7 +87,7 @@ export default function TikTok(): JSX.Element {
                   {card.list.map((item, index) => (
                     <ListItem key={`TikTok-${item}-${index}`}>
                       <ListItemIcon className="tik-tok__list-icon">
-                        <DolphinSimple color="error" />
+                        <DolphinSimpleIcon color="error" />
                       </ListItemIcon>
                       <ListItemText>{item}</ListItemText>
                     </ListItem>

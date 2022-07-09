@@ -1,5 +1,6 @@
 import { RowModel } from "models/common/table.models";
 import { TableItemModel } from "models/facebook/adsets.models";
+import { fbEndpoints } from "plugins/axios/endpoints";
 
 export const rows: RowModel<TableItemModel>[] = [
   {
@@ -14,4 +15,4 @@ export const rows: RowModel<TableItemModel>[] = [
   },
 ];
 
-export const url = "/fb-adsets?currency=USD";
+export const url = `${fbEndpoints.adsets}?currency=USD`;

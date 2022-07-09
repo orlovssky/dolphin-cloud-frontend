@@ -1,6 +1,6 @@
 import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
 
-export default function DolphinLightIcon(props: SvgIconProps) {
+export default function DolphinSimpleIcon(props: SvgIconProps) {
   return (
     <SvgIcon {...props}>
       <path

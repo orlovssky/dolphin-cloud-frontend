@@ -8,15 +8,14 @@ import {
 import { useTranslation } from "react-i18next";
 import { getListApi } from "services/api/common/list.api";
 
-export function useTableControls<Item>(url: string, heightOffset: number) {
+export function useTableControls<Item>(url: string, heightOffset?: number) {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const { items, loading, rowsPerPage, page, total, search } = useAppSelector(
     (state) => state.table
   );
   const { innerHeight } = useAppSelector((state) => state.appData);
-  // console.log(heightOffset);
-  const height = innerHeight - heightOffset;
+  const height = innerHeight - (heightOffset || 0);
 
   const loadItems = (payload?: LoadItemsModels) => {
     let urlString = url;

@@ -8,14 +8,14 @@
 4. [Код-стайл](#код-стайл)
 
 ## Файловая структура
-- :page_facing_up: <code>index.html</code> - точка входа. Здесь подключается модуль main.tsx.
+- :page_facing_up: <code>index.html</code> - точка входа. Здесь подключается модуль main.routes.tsx.
 - :page_facing_up: <code>package.json</code> - информация о приложении: название, версия, зависимости, скрипты и т.п.
 - :page_facing_up: <code>tsconfig.json</code> - настройки TypeScript.
 - :page_facing_up: <code>tsconfig.node.json</code> - настройки TypeScript для node среды vite.
 - :page_facing_up: <code>vite.config.ts</code> - настройки vite.
 - :page_facing_up: <code>.eslintrc.json</code> - настройки линтера.
 - :file_folder: <code>src</code>
-  - :page_facing_up: <code>main.tsx</code> - основной файл c React подключениями и глобальными импортами.
+  - :page_facing_up: <code>main.routes.tsx</code> - основной файл c React подключениями и глобальными импортами.
   - :page_facing_up: <code>App.tsx</code> - стартовый файл приложения.
   - :page_facing_up: <code>vite-env.d.ts</code> - автоматически сгенерированные типы для TS.
   - :file_folder: <code>pages</code> - страницы для роутера.
