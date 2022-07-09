@@ -58,7 +58,7 @@
 Нужно декомпозировать в более мелкие компоненты.
 
 #### Нейминг.
-- Названия компонентов писать в Pascal case => TabPanel.
+- Названия компонентов писать в Pascal case => TabPanel.tsx.
 - Методы/функции писать в Camel case => setAppData().
 - Константы писать в Screaming snake case => MAIN_URL.
 - Роуты писать в Kebab case => /ads-manager.
