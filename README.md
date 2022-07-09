@@ -5,6 +5,7 @@
 1. [Документация Dolphin{Cloud}](#документация-dolphincloud)
 2. [Содержание](#содержание)
 3. [Файловая структура](#файловая-структура)
+4. [Код-стайл](#код-стайл)
 
 ## Файловая структура
 - :page_facing_up: <code>index.html</code> - точка входа. Здесь подключается модуль main.tsx.
@@ -38,3 +39,30 @@
     - :file_folder: <code>router</code> - client-side routing (React Router v6).
     - :file_folder: <code>store</code> - менеджер состояний (Redux v8).
   - :file_folder: <code>models</code> - типы и интерфейсы Typescript.
+
+## Код стайл
+
+#### Пустая строка (blank line) ставится:
+- перед return.
+- перед и после if, switch, for loop statements.
+- перед и после useEffect.
+
+#### Не использовать \<div> без надобности.
+Для группировки использовать <>... ...</>
+
+#### Не использовать inline-стили со статичными параметрам.
+Вместо inline-стилей использовать классы и писать стили к ним.
+Inline-стили допускаются с динамичными свойствами.
+
+#### Не допускать более 100 строк в компоненте.
+Нужно декомпозировать в более мелкие компоненты.
+
+#### Нейминг.
+- Названия компонентов писать в Pascal case => TabPanel.
+- Методы/функции писать в Camel case => setAppData().
+- Константы писать в Screaming snake case => MAIN_URL.
+- Роуты писать в Kebab case => /ads-manager.
+- Файлы называть односложно => *Sidebar.tsx*.
+- Элементы называть полностью начиная с верхнего уровня =>
+  - *MainLayoutSidebar*(): JSX.Element
+  - import *MainLayoutSidebar* from "components/main/layout/sidebar/Sidebar";
