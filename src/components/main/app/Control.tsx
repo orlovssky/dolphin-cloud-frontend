@@ -7,6 +7,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { getLocale } from "services/constants/main/locales.constants";
+import { getValue } from "services/utils/common/localStorage.utils";
 
 export const useAppControls = () => {
   const dispatch = useAppDispatch();
@@ -22,6 +23,12 @@ export const useAppControls = () => {
   };
 
   useEffect(() => {
+    const theme = getValue("dolphin-theme");
+
+    if (theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+
     init();
     window.addEventListener("resize", init);
   }, []);
