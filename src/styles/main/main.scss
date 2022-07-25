@@ -6,6 +6,7 @@
 }
 :root {
   background-color: var(--bg-color);
+  --app-height: 100%;
 }
 
 body {
@@ -14,7 +15,7 @@ body {
 
 .main {
   &__paper.MuiPaper-root {
-    min-height: 100vh;
+    min-height: var(--app-height);
     padding-left: 56px;
     border-radius: 0;
 

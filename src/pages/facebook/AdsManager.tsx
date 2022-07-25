@@ -31,11 +31,12 @@ export default function FacebookAdsManager(): JSX.Element {
     <>
       {/*TABS*/}
       {tab !== null && (
-        <Tabs value={tab} variant="fullWidth" onChange={handleChange}>
+        <Tabs value={tab} variant="scrollable" onChange={handleChange}>
           {tabs.map(({ title }, index) => (
             <Tab
               key={`FacebookAdsManager-Tab-${index}`}
               label={t(`adsmanager.${title}`)}
+              className="ads-manager__tab"
             />
           ))}
         </Tabs>

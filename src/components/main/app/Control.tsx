@@ -17,7 +17,11 @@ export const useAppControls = () => {
     { palette: { mode: storedTheme } },
     getLocale(i18n.language)
   );
-  const init = () => {
+  const handleSize = () => {
+    document.documentElement.style.setProperty(
+      "--app-height",
+      `${window.innerHeight}px`
+    );
     dispatch(setInnerHeight());
     dispatch(setTouchScreen());
   };
@@ -29,8 +33,8 @@ export const useAppControls = () => {
       document.documentElement.setAttribute("data-theme", theme);
     }
 
-    init();
-    window.addEventListener("resize", init);
+    handleSize();
+    window.addEventListener("resize", handleSize);
   }, []);
 
   return {

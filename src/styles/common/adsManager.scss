@@ -1,0 +1,8 @@
+.ads-manager {
+  &__tab {
+    &.MuiTab-root {
+      min-width: fit-content;
+      flex: 1;
+    }
+  }
+}
