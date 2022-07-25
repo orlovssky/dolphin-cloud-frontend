@@ -17,6 +17,7 @@ export default function MainLayoutSidebarBottomTheme(): JSX.Element {
   const handleChange = (_: MouseEvent<HTMLElement>, value: PaletteMode) => {
     dispatch(setTheme(value));
     localStorage.setItem("dolphin-theme", value);
+    document.documentElement.setAttribute("data-theme", value);
   };
 
   return (

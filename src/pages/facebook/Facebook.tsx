@@ -17,7 +17,7 @@ export default function Facebook(): JSX.Element {
       </Typography>
 
       <Grid container spacing={2}>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <Typography variant="h4">
             {t("facebook.autoCampaignCreation")}
           </Typography>
@@ -25,7 +25,7 @@ export default function Facebook(): JSX.Element {
             {t("facebook.autoCampaignCreationSub")}
           </Typography>
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={12} sm={8}>
           <iframe
             className="facebook__video"
             src="https://www.youtube.com/embed/XRrM7XdDzn8"

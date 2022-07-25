@@ -7,6 +7,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { getLocale } from "services/constants/main/locales.constants";
+import { getValue } from "services/utils/common/localStorage.utils";
 
 export const useAppControls = () => {
   const dispatch = useAppDispatch();
@@ -16,14 +17,24 @@ export const useAppControls = () => {
     { palette: { mode: storedTheme } },
     getLocale(i18n.language)
   );
-  const init = () => {
+  const handleSize = () => {
+    document.documentElement.style.setProperty(
+      "--app-height",
+      `${window.innerHeight}px`
+    );
     dispatch(setInnerHeight());
     dispatch(setTouchScreen());
   };
 
   useEffect(() => {
-    init();
-    window.addEventListener("resize", init);
+    const theme = getValue("dolphin-theme");
+
+    if (theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+
+    handleSize();
+    window.addEventListener("resize", handleSize);
   }, []);
 
   return {
