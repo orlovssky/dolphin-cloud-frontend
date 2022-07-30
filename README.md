@@ -13,9 +13,9 @@
 - почта - <code>cloud@<area>dolphin.ru.com</code>
 - пароль - <code>password</code>
 
-  <a href="https://orlovssky.github.io/">
-    Ссылка на демо версию Dolphin{Cloud} :dolphin:
-  </a>
+<a href="https://orlovssky.github.io/">
+  Ссылка на демо версию Dolphin{Cloud} :dolphin:
+</a>
 
 ## Файловая структура
 - :page_facing_up: <code>index.html</code> - точка входа. Здесь подключается модуль main.tsx.
