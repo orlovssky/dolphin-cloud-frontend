@@ -19,16 +19,13 @@
   - :page_facing_up: <code>App.tsx</code> - стартовый файл приложения.
   - :page_facing_up: <code>vite-env.d.ts</code> - автоматически сгенерированные типы для TS.
   - :file_folder: <code>assets</code> - статичные ресурсы.
-  - :file_folder: <code>pages</code> - страницы для роутера.
+  - :file_folder: <code>styles</code> - стили приложения.
   - :file_folder: <code>models</code> - типы и интерфейсы Typescript.
+  - :file_folder: <code>pages</code> - страницы для роутера.
   - :file_folder: <code>components</code>
     - :file_folder: <code>main</code> - основные, системные компоненты.
     - :file_folder: <code>common</code> - простые, переиспользуемые компоненты.
     - :file_folder: <code>**special*</code> - уникальная компоненты блока.
-  - :file_folder: <code>styles</code>
-    - :file_folder: <code>main</code> - основные стили.
-    - :file_folder: <code>common</code> - общие стили.
-    - :file_folder: <code>**special*</code> - уникальные стили блока.
   - :file_folder: <code>services</code>
     - :file_folder: <code>api</code> - запросы к АПИ.
     - :file_folder: <code>constants</code> - константы.
