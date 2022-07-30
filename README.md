@@ -13,9 +13,9 @@
     Dolphin{Cloud} :dolphin:
   </a>
 
-Данные для входа:
-    - почта - <code>cloud@dolphin.ru.com</code>
-    - пароль - <code>password</code>
+#### Данные для входа:
+- почта - <code>cloud@dolphin.ru.com</code>
+- пароль - <code>password</code>
 
 ## Файловая структура
 - :page_facing_up: <code>index.html</code> - точка входа. Здесь подключается модуль main.tsx.
