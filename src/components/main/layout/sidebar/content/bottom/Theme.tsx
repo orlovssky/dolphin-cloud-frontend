@@ -14,6 +14,7 @@ export default function MainLayoutSidebarBottomTheme(): JSX.Element {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const { theme: storedTheme } = useAppSelector((state) => state.appData);
+
   const handleChange = (_: MouseEvent<HTMLElement>, value: PaletteMode) => {
     dispatch(setTheme(value));
     localStorage.setItem("dolphin-theme", value);
@@ -26,10 +27,10 @@ export default function MainLayoutSidebarBottomTheme(): JSX.Element {
       <ListItemIcon className="sidebar__item-icon">
         {getThemeIcon(storedTheme)}
       </ListItemIcon>
-      {/*THEME ICON*/}
+      {/*THEME ICON END*/}
 
-      {/*THEME TOGGLE*/}
       <ListItemText className="sidebar__item-text">
+        {/*THEME BUTTONS*/}
         <ToggleButtonGroup
           exclusive
           color="primary"
@@ -51,8 +52,8 @@ export default function MainLayoutSidebarBottomTheme(): JSX.Element {
             );
           })}
         </ToggleButtonGroup>
+        {/*THEME BUTTONS END*/}
       </ListItemText>
-      {/*THEME TOGGLE*/}
     </ListItem>
   );
 }

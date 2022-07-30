@@ -5,23 +5,20 @@ import {
   setLoading,
   setPagination,
 } from "plugins/store/modules/common/table.modules";
-import { useTranslation } from "react-i18next";
 import { getListApi } from "services/api/common/list.api";
 
-export function useTableControls<Item>(url: string, heightOffset?: number) {
+export default function <Item>(url: string) {
   const dispatch = useAppDispatch();
-  const { t } = useTranslation();
   const { items, loading, rowsPerPage, page, total, search } = useAppSelector(
     (state) => state.table
   );
-  const { innerHeight } = useAppSelector((state) => state.appData);
-  const height = innerHeight - (heightOffset || 0);
 
   const loadItems = (payload?: LoadItemsModels) => {
     let urlString = url;
     let rowsPerPageForUrl = rowsPerPage;
     let pageForUrl = page;
     const q = search;
+
     dispatch(setLoading(true));
 
     if (payload) {
@@ -64,13 +61,11 @@ export function useTableControls<Item>(url: string, heightOffset?: number) {
   };
 
   return {
-    t,
     items,
     loading,
     rowsPerPage,
     page,
     total,
-    height,
     loadItems,
   };
 }

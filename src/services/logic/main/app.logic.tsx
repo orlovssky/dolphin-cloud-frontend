@@ -7,37 +7,32 @@ import {
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { getLocale } from "services/constants/main/locales.constants";
-import { getValue } from "services/utils/common/localStorage.utils";
 
-export const useAppControls = () => {
+export default function () {
   const dispatch = useAppDispatch();
   const { i18n } = useTranslation();
-  const { theme: storedTheme } = useAppSelector((state) => state.appData);
-  const theme = createTheme(
-    { palette: { mode: storedTheme } },
-    getLocale(i18n.language)
-  );
+  const { theme } = useAppSelector((state) => state.appData);
   const handleSize = () => {
+    dispatch(setInnerHeight());
+    dispatch(setTouchScreen());
     document.documentElement.style.setProperty(
       "--app-height",
       `${window.innerHeight}px`
     );
-    dispatch(setInnerHeight());
-    dispatch(setTouchScreen());
   };
 
   useEffect(() => {
-    const theme = getValue("dolphin-theme");
-
-    if (theme) {
-      document.documentElement.setAttribute("data-theme", theme);
-    }
-
+    document.documentElement.setAttribute("data-theme", theme);
     handleSize();
     window.addEventListener("resize", handleSize);
   }, []);
 
+  const muiTheme = createTheme(
+    { palette: { mode: theme } },
+    getLocale(i18n.language)
+  );
+
   return {
-    theme,
+    theme: muiTheme,
   };
-};
+}

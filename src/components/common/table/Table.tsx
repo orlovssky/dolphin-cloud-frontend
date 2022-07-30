@@ -7,11 +7,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Table from "@mui/material/Table";
 import { TablePropsModel } from "models/common/table.models";
-import { useAppDispatch } from "plugins/store/hooks";
-import { setItems } from "plugins/store/modules/common/table.modules";
-import { useEffect } from "react";
+import tableLogic from "services/logic/common/table/table.logic";
 
-import { useTableControls } from "./Control";
 import CommonTablePagination from "./Pagination";
 
 export default function CommonTable<Item>({
@@ -19,17 +16,8 @@ export default function CommonTable<Item>({
   heightOffset = 48 + 52 + 52,
   rows,
 }: TablePropsModel<Item>): JSX.Element {
-  const dispatch = useAppDispatch();
   const { t, items, loading, height, rowsPerPage, page, total, loadItems } =
-    useTableControls<Item>(url, heightOffset);
-
-  useEffect(() => {
-    loadItems();
-
-    return () => {
-      dispatch(setItems([]));
-    };
-  }, []);
+    tableLogic<Item>(url, heightOffset);
 
   return (
     <>

@@ -5,37 +5,41 @@ import { useState, useEffect } from "react";
 import { KeyboardEvent, ChangeEvent } from "react";
 import { signInApi } from "services/api/main/auth.api";
 import { emailRegex } from "services/constants/common/regex.constants";
+import {
+  emailErrors,
+  passwordErrors,
+} from "services/validations/main/signIn.validations";
 
-const initialFormValues: SignInFormModel = {
+const initial: SignInFormModel = {
   email: "",
   password: "",
 };
 
-export const useFormControls = () => {
+export default function () {
   const { t } = useTranslation();
   const navigate = useNavigate();
-
-  const [values, setValues] = useState(initialFormValues);
-  const [errors, setErrors] = useState(initialFormValues);
+  const [showPass, setShowPass] = useState(false);
+  const [values, setValues] = useState(initial);
+  const [errors, setErrors] = useState(initial);
   const [loading, setLoading] = useState(false);
+  const getPasswordError = () => passwordErrors(errors, t);
+  const getEmailError = () => emailErrors(errors, t);
 
-  const isValid = (values: SignInFormModel) => {
-    return Object.values(values).every((value) => value === "");
-  };
+  const isValid = (values: SignInFormModel) =>
+    Object.values(values).every((value) => value === "");
 
   const validate = () => {
-    const temp = { ...initialFormValues };
-    const { email, password } = values;
+    const temp = { ...initial };
 
-    if (email === "") {
+    if (values.email === "") {
       temp.email = "empty";
-    } else if (!emailRegex.test(email)) {
+    } else if (!emailRegex.test(values.email)) {
       temp.email = "invalidEmail";
     }
 
-    if (password === "") {
+    if (values.password === "") {
       temp.password = "empty";
-    } else if (password.length < 5) {
+    } else if (values.password.length < 5) {
       temp.password = "lessThan5";
     }
 
@@ -52,60 +56,23 @@ export const useFormControls = () => {
     });
   };
 
-  const getPasswordError = () => {
-    switch (errors.password) {
-      case "empty":
-        return t("validation.required", {
-          field: t("auth.password").toLowerCase(),
-        });
-      case "lessThan5":
-        return t("validation.min", {
-          field: t("auth.password").toLowerCase(),
-          length: 5,
-        });
-      default:
-        return "";
-    }
-  };
-
-  const getEmailError = () => {
-    switch (errors.email) {
-      case "empty":
-        return t("validation.required", {
-          field: t("auth.email").toLowerCase(),
-        });
-      case "invalidEmail":
-        return t("validation.email");
-      default:
-        return "";
-    }
-  };
-
   const handleSubmit = () => {
     if (!validate()) return;
 
-    setLoading(true);
     const { email, password } = values;
-
-    signInApi({
-      username: email,
-      password,
-    })
+    setLoading(true);
+    signInApi({ username: email, password })
       .then(({ data }) => {
         if (data.data?.access_token) {
           localStorage.setItem("dolphin-api-token", data.data.access_token);
           navigate("/tik-tok/ads-manager");
         }
       })
-      .catch(() => {
-        setLoading(false);
-      });
+      .catch(() => setLoading(false));
   };
 
   useEffect(() => {
-    if (!isValid(errors)) {
-      setErrors({ ...initialFormValues });
-    }
+    if (!isValid(errors)) setErrors({ ...initial });
   }, [values]);
 
   const handleKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -113,6 +80,9 @@ export const useFormControls = () => {
   };
 
   return {
+    t,
+    showPass,
+    setShowPass,
     handleInputValue,
     getPasswordError,
     getEmailError,
@@ -120,4 +90,4 @@ export const useFormControls = () => {
     handleKeyPress,
     loading,
   };
-};
+}

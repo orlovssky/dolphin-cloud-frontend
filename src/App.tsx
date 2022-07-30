@@ -1,9 +1,9 @@
 import { ThemeProvider } from "@mui/material/styles";
-import { useAppControls } from "components/main/app/Control";
 import MainLayout from "components/main/layout/Layout";
+import appLogic from "services/logic/main/app.logic";
 
 export default function App(): JSX.Element {
-  const { theme } = useAppControls();
+  const { theme } = appLogic();
 
   return (
     <ThemeProvider theme={theme}>

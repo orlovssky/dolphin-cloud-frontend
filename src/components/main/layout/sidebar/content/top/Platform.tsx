@@ -3,34 +3,15 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import ToggleButton from "@mui/material/ToggleButton";
-import { useNavigate } from "react-router-dom";
-import { MouseEvent } from "react";
 import {
   platformsForSidebar,
   getDolphinPlatformIcon,
 } from "services/constants/main/platforms.constants";
-import {
-  getCurrentPlatform,
-  isAuthorized,
-} from "services/utils/common/route.utils";
+import platformLogic from "services/logic/main/sidebar/platform.logic";
 
 export default function MainLayoutSidebarTopPlatform(): JSX.Element {
-  const navigate = useNavigate();
-  const currentPlatform = getCurrentPlatform();
-  const isSelected = (value: string) => currentPlatform === value;
-  const isDisabled = (value: string) => !isAuthorized() || value === "google";
-  const handleChange = (_: MouseEvent<HTMLElement>, value: string) => {
-    if (currentPlatform !== value) {
-      navigate(`/${value}`);
-    }
-  };
-  const handleClick = () => {
-    if (currentPlatform) {
-      navigate(`/${currentPlatform}`);
-    } else {
-      navigate("/");
-    }
-  };
+  const { currentPlatform, isSelected, isDisabled, handleChange, handleClick } =
+    platformLogic();
 
   return (
     <ListItem className="sidebar__item">
@@ -41,10 +22,10 @@ export default function MainLayoutSidebarTopPlatform(): JSX.Element {
       >
         {getDolphinPlatformIcon(currentPlatform)}
       </ListItemIcon>
-      {/*DOLPHIN PLATFORM ICON*/}
+      {/*DOLPHIN PLATFORM ICON END*/}
 
-      {/*PLATFORM TOGGLE*/}
       <ListItemText className="sidebar__item-text">
+        {/*PLATFORM BUTTONS*/}
         <ToggleButtonGroup
           exclusive
           color="primary"
@@ -67,8 +48,8 @@ export default function MainLayoutSidebarTopPlatform(): JSX.Element {
             );
           })}
         </ToggleButtonGroup>
+        {/*PLATFORM BUTTONS END*/}
       </ListItemText>
-      {/*PLATFORM TOGGLE*/}
     </ListItem>
   );
 }

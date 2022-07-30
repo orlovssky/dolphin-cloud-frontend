@@ -24,10 +24,10 @@ export default function MainLayoutSidebarBottomLocale(): JSX.Element {
       <ListItemIcon className="sidebar__item-icon">
         {getLocaleIcon(i18n.language)}
       </ListItemIcon>
-      {/*LOCALE ICON*/}
+      {/*LOCALE ICON END*/}
 
-      {/*LOCALE TOGGLE*/}
       <ListItemText className="sidebar__item-text">
+        {/*LOCALE BUTTONS*/}
         <ToggleButtonGroup
           exclusive
           color="primary"
@@ -49,8 +49,8 @@ export default function MainLayoutSidebarBottomLocale(): JSX.Element {
             );
           })}
         </ToggleButtonGroup>
+        {/*LOCALE BUTTONS END*/}
       </ListItemText>
-      {/*LOCALE TOGGLE*/}
     </ListItem>
   );
 }
