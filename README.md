@@ -9,8 +9,9 @@
 5. [Код-стайл](#код-стайл)
 
 ## Демо
-  <a href="https://orlovssky.github.io/" target="_blank">Dolphin{Cloud} :dolphin:</a>
-  [go](http://stackoverflow.com){:target="_blank" rel="noopener"}
+  <a href="https://orlovssky.github.io/">
+    Dolphin{Cloud} :dolphin:
+  </a>
 
 Данные для входа:
     - почта - <code>cloud@dolphin.ru.com</code>
