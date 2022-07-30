@@ -10,8 +10,7 @@
 
 ## Демо
   <a href="https://orlovssky.github.io/" target="_blank">Dolphin{Cloud} :dolphin:</a>
-
-  [demo](https://example.com){target="_blank"}
+  [go](http://stackoverflow.com){:target="_blank" rel="noopener"}
 
 Данные для входа:
     - почта - <code>cloud@dolphin.ru.com</code>
