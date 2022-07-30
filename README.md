@@ -14,7 +14,7 @@
   </a>
 
 ###### Данные для входа:
-- почта - <code><a name="email">cloud@dolphin.ru.com</a></code>
+- почта - <code>cloud@<area>dolphin.ru.com</code>
 - пароль - <code>password</code>
 
 ## Файловая структура
