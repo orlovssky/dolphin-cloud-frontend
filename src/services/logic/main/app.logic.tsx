@@ -7,6 +7,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { getLocale } from "services/constants/main/locales.constants";
+import { getValue } from "services/utils/common/localStorage.utils";
 
 export default function () {
   const dispatch = useAppDispatch();
@@ -20,9 +21,18 @@ export default function () {
       `${window.innerHeight}px`
     );
   };
+  const addMeta = () => {
+    const theme = getValue("dolphin-theme");
+    const themeColor = theme === "dark" ? "#1E1E1E" : "#FFFFFF";
+    const meta = document.createElement("meta");
+    meta.id = "mainThemeColorMeta";
+    meta.name = "theme-color";
+    meta.content = themeColor;
+    document.head.appendChild(meta);
+  };
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
+    addMeta();
     handleSize();
     window.addEventListener("resize", handleSize);
   }, []);

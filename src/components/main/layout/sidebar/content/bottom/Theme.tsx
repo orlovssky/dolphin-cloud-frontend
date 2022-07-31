@@ -14,11 +14,16 @@ export default function MainLayoutSidebarBottomTheme(): JSX.Element {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const { theme: storedTheme } = useAppSelector((state) => state.appData);
-
+  const setMeta = (value: PaletteMode) => {
+    const themeColor = value === "dark" ? "#1E1E1E" : "#FFFFFF";
+    document
+      .querySelector("meta[id='mainThemeColorMeta']")!
+      .setAttribute("content", themeColor);
+  };
   const handleChange = (_: MouseEvent<HTMLElement>, value: PaletteMode) => {
     dispatch(setTheme(value));
     localStorage.setItem("dolphin-theme", value);
-    document.documentElement.setAttribute("data-theme", value);
+    setMeta(value);
   };
 
   return (
