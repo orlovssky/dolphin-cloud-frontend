@@ -1,9 +1,8 @@
 .sidebar {
   &__drawer {
     &.sidebar_desktop {
-      width: 56px;
-
       & .MuiDrawer-paper {
+        overflow-x: hidden;
         justify-content: space-between;
         width: 56px;
         transition: width .13s;
