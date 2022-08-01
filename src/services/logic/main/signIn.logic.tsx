@@ -65,7 +65,7 @@ export default function () {
       .then(({ data }) => {
         if (data.data?.access_token) {
           localStorage.setItem("dolphin-api-token", data.data.access_token);
-          navigate("/tik-tok/ads-manager");
+          navigate("/tik-tok");
         }
       })
       .catch(() => setLoading(false));

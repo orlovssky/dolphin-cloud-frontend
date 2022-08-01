@@ -1,12 +1,5 @@
-[data-theme='dark'] {
-  --bg-color: rgb(30,30,30);
-}
-[data-theme='light'] {
-  --bg-color: #fff;
-}
 :root {
-  background-color: var(--bg-color);
-  --app-height: 100%;
+  --app-height: auto;
 }
 
 body {
@@ -14,13 +7,15 @@ body {
 }
 
 .main {
-  &__paper.MuiPaper-root {
-    min-height: var(--app-height);
-    padding-left: 56px;
-    border-radius: 0;
+  &__paper {
+    &.MuiPaper-root {
+      min-height: var(--app-height);
+      padding-left: 56px;
+      border-radius: 0;
 
-    &.main_touchscreen {
-      padding-left: 0;
+      &.main_touchscreen {
+        padding-left: 0;
+      }
     }
   }
 
